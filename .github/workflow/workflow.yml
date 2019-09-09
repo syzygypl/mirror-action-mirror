@@ -1,0 +1,10 @@
+name: Mirror repository
+
+on: [push]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Mirror
+        uses: syzygypl/mirror-action@master

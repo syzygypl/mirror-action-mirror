@@ -1,0 +1,6 @@
+name: mirror-action
+author: syzygy
+description: This action allows you to mirror your github repo to other one
+runs:
+  using: 'docker'
+  image: 'Dockerfile'

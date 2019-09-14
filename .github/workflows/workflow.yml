@@ -8,3 +8,7 @@ jobs:
     steps:
       - name: Mirror
         uses: syzygypl/mirror-action@master
+        with:
+          originSshKey: ${{ secrets.ORIGIN_REPO_SSH }}
+          mirrorSshKey: ${{ secrets.MIRROR_REPO_SSH }}
+          mirrorRepoUrl: 'git@github.com:syzygypl/mirror-action-mirror.git'

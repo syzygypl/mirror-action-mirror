@@ -9,7 +9,7 @@ run: build
 	-e "INPUT_ORIGINSSHKEY=${ORIGIN_SSH_KEY}" \
 	-e "INPUT_MIRRORSSHKEY=${MIRROR_SSH_KEY}" \
 	-e "INPUT_MIRRORREPOURL=git@github.com:syzygypl/mirror-action.git" \
-	-e "ORIGIN_GITHUB_REPOSITORY=syzygypl/mirror-action" \
+	-e "GITHUB_REPOSITORY=syzygypl/mirror-action" \
 	syzygypl/mirror-action:latest
 
 run-bash: build
@@ -17,6 +17,6 @@ run-bash: build
 	-e "INPUT_ORIGINSSHKEY=$(cat ./test-data/origin)" \
 	-e "INPUT_MIRRORSSHKEY=$(cat ./test-data/mirror)" \
 	-e "INPUT_MIRRORREPOURL=git@github.com:syzygypl/mirror-action.git" \
-	-e "ORIGIN_GITHUB_REPOSITORY=git@github.com:syzygypl/mirror-action.git" \
+	-e "GITHUB_REPOSITORY=git@github.com:syzygypl/mirror-action.git" \
 	-it --entrypoint="/bin/bash" \
 	syzygypl/mirror-action:latest

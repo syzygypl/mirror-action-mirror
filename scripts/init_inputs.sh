@@ -1,7 +1,5 @@
 #!/usr/bin/env bash
 
-env
-
 function explode_mirror_repo(){
     local repo=$1
     match="^(ssh:\/\/)?((\w+)@?)?([a-zA-Z0-9\._-]+)(:[0-9]{1,5}+)?(\/|:)?([a-zA-Z\.\/_-]+).git$"
@@ -42,8 +40,8 @@ ORIGIN_REPO_HOST="github.com"
 ORIGIN_REPO_USER="git"
 ORIGIN_REPO_URL="${ORIGIN_REPO_USER}@${ORIGIN_REPO_HOST}:${GITHUB_REPOSITORY}.git"
 
-ORIGIN_REPO_SSH_KEY=$(get_input originSshKey)
-MIRROR_REPO_SSH_KEY=$(get_input mirrorSshKey)
+ORIGIN_REPO_SSH_KEY="${ORIGIN_SSH_KEY}"
+MIRROR_REPO_SSH_KEY="${MIRROR_SSH_KEY}"
 MIRROR_REPO_SSH_KEY_FILE="$(mktemp -p "/tmp")"
 ORIGIN_REPO_SSH_KEY_FILE="$(mktemp -p "/tmp")"
 

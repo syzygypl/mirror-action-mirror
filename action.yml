@@ -5,11 +5,6 @@ runs:
   using: 'docker'
   image: 'Dockerfile'
 inputs:
-  originSshKey:
-    description: 'PRIVATE ssh key for your origin (github) repository (you can setup it in deployment)'
-    required: true
-  mirrorSshKey:
-    description: 'PRIVATE ssh key for your mirror repository'
-    required: true
   mirrorRepoUrl:
     desctipyion: 'mirror repo url of your mirror repository (ssh://)?(user@)?(domain)(:port)?(/|:)?(path).git'
+    required: true

@@ -6,16 +6,16 @@ build:
 
 run: build
 	docker run \
-	-e "INPUT_ORIGINSSHKEY=${ORIGIN_SSH_KEY}" \
-	-e "INPUT_MIRRORSSHKEY=${MIRROR_SSH_KEY}" \
+	-e "ORIGIN_SSH_KEY=${ORIGIN_SSH_KEY}" \
+	-e "MIRROR_SSH_KEY=${MIRROR_SSH_KEY}" \
 	-e "INPUT_MIRRORREPOURL=git@github.com:syzygypl/mirror-action.git" \
 	-e "GITHUB_REPOSITORY=syzygypl/mirror-action" \
 	syzygypl/mirror-action:latest
 
 run-bash: build
 	docker run \
-	-e "INPUT_ORIGINSSHKEY=$(cat ./test-data/origin)" \
-	-e "INPUT_MIRRORSSHKEY=$(cat ./test-data/mirror)" \
+	-e "ORIGIN_SSH_KEY=$(cat ./test-data/origin)" \
+	-e "MIRROR_SSH_KEY=$(cat ./test-data/mirror)" \
 	-e "INPUT_MIRRORREPOURL=git@github.com:syzygypl/mirror-action.git" \
 	-e "GITHUB_REPOSITORY=git@github.com:syzygypl/mirror-action.git" \
 	-it --entrypoint="/bin/bash" \

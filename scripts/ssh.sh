@@ -17,10 +17,10 @@ function configure_ssh(){
     local private_key="$2"
 
     echo "Host ${repo_host}" >> "${SSH_CONFIG}"
-    echo " IdentitiesOnly yes" >> "${SSH_CONFIG}"
+    echo " IdentitiesOnly=yes" >> "${SSH_CONFIG}"
     echo " UserKnownHostsFile=/dev/null" >> "${SSH_CONFIG}"
-    echo " StrictHostKeyChecking no" >> "${SSH_CONFIG}"
-    echo " IdentityFile ${private_key}" >> "${SSH_CONFIG}"
+    echo " StrictHostKeyChecking=no" >> "${SSH_CONFIG}"
+    echo " IdentityFile=${private_key}" >> "${SSH_CONFIG}"
 }
 
 function create_ssh_key(){
@@ -32,6 +32,6 @@ function create_ssh_key(){
 
 function add_to_known_hosts(){
     local host="$1"
-    ssh-keyscan -t rsa "$host" >> "${KNOWN_HOSTS_FILE}"
+    ssh-keyscan -H "$host" >> "${KNOWN_HOSTS_FILE}"
 }
 

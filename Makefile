@@ -8,7 +8,7 @@ run: build
 	docker run \
 	-e "INPUT_ORIGINSSHKEY=${ORIGIN_SSH_KEY}" \
 	-e "INPUT_MIRRORSSHKEY=${MIRROR_SSH_KEY}" \
-	-e "INPUT_MIRRORREPOURL=git@github.com:syzygypl/mirror-action.git" \
+	-e "INPUT_MIRRORREPOURL=ssh://git@git.domain.pl:4422/syzygypl/mirror-action.git" \
 	-e "GITHUB_REPOSITORY=syzygypl/mirror-action" \
 	syzygypl/mirror-action:latest
 

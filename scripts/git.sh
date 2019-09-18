@@ -27,8 +27,8 @@ function modify_repo_git_config(){
     fi
     cat ${file} | sed "${line}s|.*|	fetch = +refs/heads/\*\:refs/heads/\*\\|	fetch \= +refs/tags/\*\:refs/tags/\*|" | tr '|' '\n' > ${file}
 
+    cd ${repo} && git remote u  pdate
     cd ${repo} && git config --bool core.bare false
-    cd ${repo} && git remote update
 }
 
 function push() {

@@ -1,5 +1,6 @@
 #!/usr/bin/env bash
 
+
 function explode_mirror_repo(){
     local repo=$1
     match="^(ssh:\/\/)?((\w+)@?)?([a-zA-Z0-9\._-]+)(:[0-9]{1,5}+)?(\/|:)?([a-zA-Z\.\/_-]+).git$"
@@ -45,6 +46,9 @@ function check_ssh_key_content(){
         exit 31;
     fi
 }
+
+USER=$(whoami)
+HOME=$(eval echo "~$USER")
 
 ORIGIN_REPO_HOST="github.com"
 ORIGIN_REPO_USER="git"

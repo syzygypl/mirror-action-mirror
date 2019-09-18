@@ -9,6 +9,6 @@ jobs:
       - name: Mirror
         uses: syzygypl/mirror-action@master
         with:
-          originSshKey: ${{ secrets.ORIGIN_REPO_SSH }}
-          mirrorSshKey: ${{ secrets.MIRROR_REPO_SSH }}
+          originSshKey: ${{ secrets.MIRROR_SSH_KEY }}
+          mirrorSshKey: ${{ secrets.ORIGIN_SSH_KEY }}
           mirrorRepoUrl: 'git@github.com:syzygypl/mirror-action-mirror.git'

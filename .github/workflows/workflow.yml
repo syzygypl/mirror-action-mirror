@@ -10,6 +10,6 @@ jobs:
         uses: syzygypl/mirror-action@master
         with:
           mirrorRepoUrl: 'git@github.com:syzygypl/mirror-action-mirror.git'
-        envs:
+        env:
           MIRROR_SSH_KEY: ${{ secrets.MIRROR_REPO_SSH }}
           ORIGIN_SSH_KEY: ${{ secrets.ORIGIN_REPO_SSH }}

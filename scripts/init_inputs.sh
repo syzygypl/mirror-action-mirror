@@ -1,5 +1,7 @@
 #!/usr/bin/env bash
 
+env
+
 function explode_mirror_repo(){
     local repo=$1
     match="^(ssh:\/\/)?((\w+)@?)?([a-zA-Z0-9\._-]+)(:[0-9]{1,5}+)?(\/|:)?([a-zA-Z\.\/_-]+).git$"

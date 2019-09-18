@@ -9,7 +9,7 @@ function prepare_ssh(){
     touch "${SSH_CONFIG}"
     touch "${KNOWN_HOSTS_FILE}"
     chmod 700 "${SSH_CONFIG_DIR}"
-    chmod 600 "${KNOWN_HOSTS_FILE}"
+    chmod 644 "${KNOWN_HOSTS_FILE}"
 }
 
 function configure_ssh(){
@@ -32,6 +32,6 @@ function create_ssh_key(){
 
 function add_to_known_hosts(){
     local host="$1"
-    ssh-keyscan -H "$host" >> "${KNOWN_HOSTS_FILE}"
+    ssh-keyscan -t rsa "$host" >> "${KNOWN_HOSTS_FILE}"
 }
 

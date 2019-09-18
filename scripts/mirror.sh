@@ -16,6 +16,8 @@ configure_ssh "${MIRROR_REPO_HOST}" "${MIRROR_REPO_SSH_KEY_FILE}"
 add_to_known_hosts "${ORIGIN_REPO_HOST}"
 add_to_known_hosts "${MIRROR_REPO_HOST}"
 
+ssh -vvv "git@${ORIGIN_REPO_HOST}"
+
 clone "${ORIGIN_REPO_URL}" "${TMP_REPO_DIR}"
 modify_git_config "${ORIGIN_REPO_USER}"
 modify_repo_git_config "${TMP_REPO_DIR}"

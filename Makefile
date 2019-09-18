@@ -1,5 +1,9 @@
-ORIGIN_SSH_KEY=`cat ./test-data/origin`
-MIRROR_SSH_KEY=`cat ./test-data/mirror`
+#!make
+include .env
+export
+
+ORIGIN_SSH_KEY=`cat ${ORIGIN_SSH_KEY_FILE}`
+MIRROR_SSH_KEY=`cat ${MIRROR_SSH_KEY_FILE}`
 
 build:
 	docker build -t syzygypl/mirror-action:latest .
@@ -8,14 +12,14 @@ run: build
 	docker run \
 	-e "INPUT_ORIGINSSHKEY=${ORIGIN_SSH_KEY}" \
 	-e "INPUT_MIRRORSSHKEY=${MIRROR_SSH_KEY}" \
-	-e "INPUT_MIRRORREPOURL=ssh://git@git.domain.pl:4422/syzygypl/mirror-action.git" \
+	-e "INPUT_MIRRORREPOURL=git@github.com:syzygypl/mirror-action-mirror.git" \
 	-e "GITHUB_REPOSITORY=syzygypl/mirror-action" \
 	syzygypl/mirror-action:latest
 
 run-bash: build
 	docker run \
-	-e "INPUT_ORIGINSSHKEY=$(cat ./test-data/origin)" \
-	-e "INPUT_MIRRORSSHKEY=$(cat ./test-data/mirror)" \
+	-e "INPUT_ORIGINSSHKEY=${ORIGIN_SSH_KEY}" \
+	-e "INPUT_MIRRORSSHKEY=${MIRROR_SSH_KEY}" \
 	-e "INPUT_MIRRORREPOURL=git@github.com:syzygypl/mirror-action.git" \
 	-e "GITHUB_REPOSITORY=git@github.com:syzygypl/mirror-action.git" \
 	-it --entrypoint="/bin/bash" \

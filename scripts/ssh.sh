@@ -17,6 +17,7 @@ function configure_ssh(){
     local private_key="$2"
 
     echo "Host ${repo_host}" >> "${SSH_CONFIG}"
+    echo " LogLevel DEBUG3" >> "${SSH_CONFIG}"
     echo " IdentitiesOnly=yes" >> "${SSH_CONFIG}"
     echo " UserKnownHostsFile=/dev/null" >> "${SSH_CONFIG}"
     echo " StrictHostKeyChecking=no" >> "${SSH_CONFIG}"

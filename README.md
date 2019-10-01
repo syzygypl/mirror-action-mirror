@@ -36,7 +36,7 @@ For complete setup you have to:
 
 ### Github action config
 
-To set up this action you have to create file `.git/workflows/workflow.yml` with content beneath. And that's it - repository mirroring is set up completely
+To set up this action you have to create file `.github/workflows/workflow.yml` with content beneath. And that's it - repository mirroring is set up completely
 
 ```yaml
 name: Mirror repository

@@ -1,5 +1,6 @@
 #!/usr/bin/env bash
 
+export GIT_SSH_COMMAND="ssh -vvv"
 
 function clone(){
     local repo="$1"

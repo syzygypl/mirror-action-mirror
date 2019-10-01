@@ -8,6 +8,11 @@ To use that plugin you have to:
 * setup ssh access to your origin and mirror repo
 * configure this action for every push to origin repo
 
+#### Notes
+
+* After initial action setup it will probably will take from 5 to 10 minutes for GitHub to recognize the action. During this in your action you will see block with yellow circle and text `(Unnamed workflow)` in project Actions sections  
+* In `Settings -> Actions` **Enable local & third party Actions for this repository** should be enabled to allow execution of this action 
+
 #### Ssh key setup
  
 This block provides description how to setup ssh access for repos. If you already have such access or you are experienced user and know how to setup them by yourself skip this section :)

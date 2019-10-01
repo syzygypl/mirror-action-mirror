@@ -1,7 +1,5 @@
 #!/usr/bin/env bash
 
-export GIT_SSH_COMMAND="ssh -vvv"
-
 function clone(){
     local repo="$1"
     local dest="$2/.git"
@@ -12,6 +10,7 @@ function clone(){
 
 function modify_git_config(){
     local username="$1"
+    git config --global core.sshCommand "ssh -vvv"
     git config --global credential.username "${username}"
     git config --global credential.helper cache
 }

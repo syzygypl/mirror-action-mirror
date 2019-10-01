@@ -3,7 +3,7 @@ author: syzygy
 description: This action allows you to mirror your github repo to other one
 runs:
   using: 'docker'
-  image: 'frostfox/github-mirror-action:latest'
+  image: 'frostfox/github-mirror-action'
 inputs:
   originSshKey:
     description: 'PRIVATE ssh key for your origin (github) repository (you can setup it in deployment)'

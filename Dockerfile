@@ -1,6 +1,6 @@
-FROM centos:7
+FROM alpine
 
-RUN yum install git -y
+RUN apk add bash git grep sed openssh bind-tools
 
 COPY scripts/*.sh /bin/
 

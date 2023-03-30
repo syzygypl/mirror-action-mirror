@@ -9,7 +9,7 @@ jobs:
       - uses: actions/checkout@master
 
       - name: Publish to Registry
-        uses: elgohr/Publish-Docker-Github-Action@master
+        uses: elgohr/Publish-Docker-Github-Action@v5
         with:
           name: frostfox/github-mirror-action
           username: ${{ secrets.DOCKER_HUB_USERNAME }}
